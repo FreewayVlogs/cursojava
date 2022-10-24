@@ -4,6 +4,8 @@
  */
 package cursojavau;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mauriciounca
@@ -15,6 +17,8 @@ public class Cursojavau {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        JOptionPane.showMessageDialog(null, "login ok");
     }
     
 }
