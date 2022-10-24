@@ -5,6 +5,8 @@
 package cursojavau;
 
 import javax.swing.JOptionPane;
+import clases.*;
+
 
 /**
  *
@@ -17,8 +19,10 @@ public class Cursojavau {
      */
     public static void main(String[] args) {
   
-        JOptionPane.showMessageDialog(null, "login ok");
-        JOptionPane.showMessageDialog(null, "login ok");
+        Ejercicios ejercicios = new Ejercicios();
+     /*   ejercicios.entrarmatrix(JOptionPane.showInputDialog("Escribe tu nomber: ")); */
+        ejercicios.areavolesfera(JOptionPane.showInputDialog("Escribe el radio del a esfesa: "));
+     
     }
     
 }
