@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
 public class Ejercicios {
     
     String nombre;
-    Double radio,area,volumen,interes;
-    int monto;
+    Double radio,area,volumen,interes,resultado,monto;
+    int annos;
     
     public void entrarmatrix (String nombre) {
         
@@ -33,6 +33,14 @@ public class Ejercicios {
         JOptionPane.showMessageDialog(null, "El volumen de la esfera es: " + this.volumen);
     }
     
+        public void interescompuesto (double monto,double interes,int annos) {
+            
+        this.monto = monto;    
+        this.interes = interes/100; 
+        this.annos = annos; 
+        this.resultado = this.monto * pow((1+this.interes),this.annos);
+        JOptionPane.showMessageDialog(null, "EL valor de su inversión mas los intereses es: " + this.resultado);
+    }
     
     
 }
