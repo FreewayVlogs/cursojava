@@ -7,7 +7,6 @@ package cursojavau;
 import javax.swing.JOptionPane;
 import clases.*;
 
-
 /**
  *
  * @author mauriciounca
@@ -18,11 +17,30 @@ public class Cursojavau {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-  
-        Ejercicios ejercicios = new Ejercicios();
-     /*   ejercicios.entrarmatrix(JOptionPane.showInputDialog("Escribe tu nomber: ")); */
-     /*   ejercicios.areavolesfera(JOptionPane.showInputDialog("Escribe el radio del a esfesa: ")); */
-     ejercicios.interescompuesto(Double.parseDouble(JOptionPane.showInputDialog("Escribe tu monto: ")),Double.parseDouble(JOptionPane.showInputDialog("Escribe el interes: ")),Integer.parseInt(JOptionPane.showInputDialog("Escribe los años: "))); 
+
+        String entrada = "0";
+        do {
+            entrada = JOptionPane.showInputDialog(
+                    "Seleccione una opción\n\n"
+                    + "1. Menú de ejercicios\n"
+                    + "2. Salir\n");
+            switch (entrada) {
+                case "1":
+                    Ejercicios ejercicios = new Ejercicios();
+                    ejercicios.MostrarOpciones();
+                    ejercicios.menu();
+                    break;
+                case "2":
+                    JOptionPane.showMessageDialog(null, "Menú inicial cerrado");
+                    entrada = "0";
+                    System.exit(0);
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opcion invalidad");
+                    break;
+            }
+        } while (entrada != "0");
+
     }
-    
+
 }
