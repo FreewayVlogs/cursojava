@@ -21,8 +21,8 @@ public class Cursojavau {
   
         Ejercicios ejercicios = new Ejercicios();
      /*   ejercicios.entrarmatrix(JOptionPane.showInputDialog("Escribe tu nomber: ")); */
-        ejercicios.areavolesfera(JOptionPane.showInputDialog("Escribe el radio del a esfesa: "));
-     
+     /*   ejercicios.areavolesfera(JOptionPane.showInputDialog("Escribe el radio del a esfesa: ")); */
+     ejercicios.interescompuesto(Double.parseDouble(JOptionPane.showInputDialog("Escribe tu monto: ")),Double.parseDouble(JOptionPane.showInputDialog("Escribe el interes: ")),Integer.parseInt(JOptionPane.showInputDialog("Escribe los años: "))); 
     }
     
 }
