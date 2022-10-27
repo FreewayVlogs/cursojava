@@ -13,10 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class Ejercicios {
 
-    String nombre;
-    Double radio, area, volumen, interes, resultado, monto;
-    int annos;
-    String opcion = "12";
+    String nombre, numer,opcion = "12";
+    Double radio, area, volumen, interes, resultado, monto, lado, diametro, perimetro;
+    int annos, validacion;
 
     public void entrarmatrix(String nombre) {
 
@@ -43,6 +42,35 @@ public class Ejercicios {
         JOptionPane.showMessageDialog(null, "EL valor de su inversión mas los intereses es: " + this.resultado);
     }
 
+    public void perimetroCuadrado(double lado) {
+
+        this.resultado = lado * 4;
+        JOptionPane.showMessageDialog(null, "El perimetro del cuadrado es: " + this.resultado);
+    }
+
+    public void areaperimetrocirculo(String diametro) {
+        
+        this.diametro = Double.parseDouble(diametro);
+        this.radio = this.diametro / 2;
+        this.area = PI * pow(this.radio, 2);
+        this.perimetro = 2 * PI * this.radio;
+        JOptionPane.showMessageDialog(null, "El area del circulo es: " + this.area);
+        JOptionPane.showMessageDialog(null, "El perimetro del circulo es: " + this.perimetro);
+    }
+
+
+    public void ValidacionNumero(String numero) {
+        
+        this.validacion = numero.length();
+        if (this.validacion == 6) {
+        
+            JOptionPane.showMessageDialog(null, "Hay "+ numero.charAt(5) + " unidades, "+ numero.charAt(4) + " decenas, "+ numero.charAt(3) + " centenas, "+ numero.charAt(2) + " milésimas, "+ numero.charAt(1) + " unidades de diez mil y "+ numero.charAt(0) + " unidades de cien mil.");
+            
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "El numero no debe tener decimales y deber de 6 digitos");
+        }
+    }
     public void MostrarOpciones() {
 
         opcion = JOptionPane.showInputDialog(
@@ -50,6 +78,9 @@ public class Ejercicios {
                 + "1. Saludo Matrix\n"
                 + "2. Area y Volumen de una esfera\n"
                 + "3. Interes Compuesto\n"
+                + "4. Perimetro cuadrado\n"
+                + "5. Area y Perimetro circulo\n"
+                + "6. Validación numero\n"
                 + "12. Salir\n\n");
     }
 
@@ -69,6 +100,21 @@ public class Ejercicios {
                     break;
                 case "3":
                     interescompuesto(Double.parseDouble(JOptionPane.showInputDialog("Escribe tu monto: ")), Double.parseDouble(JOptionPane.showInputDialog("Escribe el interes: ")), Integer.parseInt(JOptionPane.showInputDialog("Escribe los años: ")));
+                    MostrarOpciones();
+                    menu();
+                    break;
+                case "4":
+                    perimetroCuadrado(Double.parseDouble(JOptionPane.showInputDialog("Escribe la longitud de un lado: ")));
+                    MostrarOpciones();
+                    menu();
+                    break;
+                case "5":
+                    areaperimetrocirculo(JOptionPane.showInputDialog("Escriba el dametro del circulo: "));
+                    MostrarOpciones();
+                    menu();
+                    break;
+                case "6":
+                    ValidacionNumero(JOptionPane.showInputDialog("Escriba un numero entero de seis cifras: "));
                     MostrarOpciones();
                     menu();
                     break;
