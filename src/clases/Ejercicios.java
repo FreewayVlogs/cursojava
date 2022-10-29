@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Ejercicios {
 
     String nombre, numer,opcion = "12";
-    Double radio, area, volumen, interes, resultado, monto, lado, diametro, perimetro;
+    Double radio, area, volumen, interes, resultado, monto, lado, diametro, perimetro,diagonal,altura,areala,distancia,x1,x2,y1,y2;
     int annos, validacion;
 
     public void entrarmatrix(String nombre) {
@@ -71,6 +71,48 @@ public class Ejercicios {
             JOptionPane.showMessageDialog(null, "El numero no debe tener decimales y deber de 6 digitos");
         }
     }
+    
+    public void arearectangulo(String diagonal,String lado) {
+        
+        this.lado = Double.parseDouble(lado);
+        this.diagonal = Double.parseDouble(diagonal);
+        this.altura = sqrt(pow(this.diagonal, 2)- pow(this.lado, 2));
+        this.area = this.lado * this.altura;
+        JOptionPane.showMessageDialog(null, "El area del rectangulo es: " + this.area);
+    }
+
+    public void areavolumencono(String radio,String altura) {
+        
+        this.radio = Double.parseDouble(radio);
+        this.altura = Double.parseDouble(altura);
+        this.lado = sqrt(pow(this.radio, 2)- pow(this.altura, 2));
+        this.areala = PI*this.radio* this.lado;
+        this.area = this.areala+(PI* this.radio*(this.radio+this.lado));
+        this.volumen = (PI* this.radio*this.altura)/3;
+        JOptionPane.showMessageDialog(null, "El area del cono es: " + this.area);
+        JOptionPane.showMessageDialog(null, "El volumen del cono es: " + this.volumen);
+    }
+    public void espaciolibrecilimdro(String diametro,String altura) {
+        
+        this.radio = Double.parseDouble(diametro)/2;
+        this.altura = Double.parseDouble(altura);
+        this.lado = sqrt(pow(this.radio, 2)- pow(this.altura, 2));
+        this.areala = PI*this.radio* this.lado;
+        this.area = this.areala+(PI* this.radio*(this.radio+this.lado));
+        this.volumen = ((PI* pow(this.radio, 2)*this.altura))-((PI* pow(this.radio, 2)*this.altura)/3);
+        JOptionPane.showMessageDialog(null, "El volumen libre del cilindro es: " + this.volumen);
+    }
+    public void distanciaentrepuntos(String x1,String y1,String x2,String y2) {
+        
+        this.x1 = Double.parseDouble(x1);
+        this.y1 = Double.parseDouble(y1);
+        this.x2 = Double.parseDouble(x2);
+        this.y2 = Double.parseDouble(y2);
+        this.diagonal = sqrt(pow((this.x2-this.x1), 2)+ pow((this.y2-this.y1), 2));
+
+        JOptionPane.showMessageDialog(null, "La distancia entre los dos puntos: " + this.diagonal);
+    }
+    
     public void MostrarOpciones() {
 
         opcion = JOptionPane.showInputDialog(
@@ -81,6 +123,10 @@ public class Ejercicios {
                 + "4. Perimetro cuadrado\n"
                 + "5. Area y Perimetro circulo\n"
                 + "6. Validación numero\n"
+                + "7. Area rectangulo lado y diagonal\n"
+                + "8. Area y Volumen de un cono\n"
+                + "9. Volume libre de un cilindro con un cono de radio y altura igua dentro\n"
+                + "10. Distancia entre punton\n"
                 + "12. Salir\n\n");
     }
 
@@ -118,6 +164,26 @@ public class Ejercicios {
                     MostrarOpciones();
                     menu();
                     break;
+                case "7":
+                    arearectangulo(JOptionPane.showInputDialog("Escriba longitud de la diagonal: "),JOptionPane.showInputDialog("Digite la longitud del lado: "));
+                    MostrarOpciones();
+                    menu();
+                    break;
+                case "8":
+                    areavolumencono(JOptionPane.showInputDialog("Digite el radio del cono: "),JOptionPane.showInputDialog("Digite la altura del cono: "));
+                    MostrarOpciones();
+                    menu();
+                    break;     
+                case "9":
+                    areavolumencono(JOptionPane.showInputDialog("Digite el diametro del cilindro: "),JOptionPane.showInputDialog("Digite la altura del cilindro: "));
+                    MostrarOpciones();
+                    menu();
+                    break;
+                case "10":
+                    distanciaentrepuntos(JOptionPane.showInputDialog("Digite del punto a X: "),JOptionPane.showInputDialog("Digite del punto a Y: "),JOptionPane.showInputDialog("Digite del punto b X: "),JOptionPane.showInputDialog("Digite del punto b Y: "));
+                    MostrarOpciones();
+                    menu();
+                    break;  
                 case "12":
                     JOptionPane.showMessageDialog(null, "Cerrar menú");
                     opcion = "12";
