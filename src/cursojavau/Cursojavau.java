@@ -22,15 +22,17 @@ public class Cursojavau {
         do {
             entrada = JOptionPane.showInputDialog(
                     "Seleccione una opción\n\n"
-                    + "1. Menú de ejercicios\n"
-                    + "2. Salir\n");
+                    + "1. Menú de ejercicios paquete 1\n"
+                    + "2. Menú de ejercicios paquete 2\n"
+                    + "3. Menú de ejercicios paquete 3\n"
+                    + "4. Salir\n");
             switch (entrada) {
                 case "1":
                     Ejercicios ejercicios = new Ejercicios();
                     ejercicios.MostrarOpciones();
                     ejercicios.menu();
                     break;
-                case "2":
+                case "4":
                     JOptionPane.showMessageDialog(null, "Menú inicial cerrado");
                     entrada = "0";
                     System.exit(0);
