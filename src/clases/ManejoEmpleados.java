@@ -33,7 +33,7 @@ public class ManejoEmpleados {
             return ValEdad;
         } else {
             do {
-                ValEdad = Integer.parseInt(JOptionPane.showInputDialog("Debe ser mayor a 18 años, digite de nuevo la edadz: "));
+                ValEdad = Integer.parseInt(JOptionPane.showInputDialog("Debe ser mayor a 18 años, digite de nuevo la edad: "));
             } while (ValEdad < 18);
             return ValEdad;
         }
@@ -43,6 +43,6 @@ public class ManejoEmpleados {
         public String toString()
                 
         {
-         return "Nombre: "+this.nombre+"Edad: "+this.edad+"Nombre: "+this.sueldo;
+         return "Nombre: "+this.nombre+" Edad: "+this.edad+" Nombre: "+this.sueldo;
         }
 }
