@@ -43,6 +43,6 @@ public class ManejoEmpleados {
         public String toString()
                 
         {
-         return "Nombre: "+this.nombre+" Edad: "+this.edad+" Nombre: "+this.sueldo;
+         return "Nombre: "+this.nombre+" Edad: "+this.edad+" Nombre:  "+this.sueldo;
         }
 }

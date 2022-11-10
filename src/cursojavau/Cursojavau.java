@@ -23,7 +23,7 @@ public class Cursojavau {
             entrada = JOptionPane.showInputDialog(
                     "Seleccione una opción\n\n"
                     + "1. Menú de ejercicios paquete 1\n"
-                    + "2. Empleados\n"
+                    + "2. Empleados \n"
                     + "4. Salir\n");
             switch (entrada) {
                 case "1":
